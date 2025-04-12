@@ -1,0 +1,146 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: rgba(210, 180, 139, 0.676);
+    color: #ffffff;
+    display: flex;
+    height: 80px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+.logo {
+    width: 254px; /* 根据实际图片比例调整 */
+    height: auto;
+    object-fit: contain;
+}
+.nav-container {
+    width: 100%; 
+    padding: 0 120px; /* 左右边距 */
+    height: 100%;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 左右分离布局 */
+}
+
+.menu {
+    display: flex;
+    height: 100%; 
+    gap: 40px; /* 菜单项间距 */
+}
+
+.menu-item{
+    width: 150px;
+    height: 100%;
+    display: inline-flex;
+    position: relative;
+    /* 新增间距控制 */
+    
+    justify-content: space-between; /* 三列式布局 */
+    align-items: center;
+}
+.menu-item a {
+    flex-grow: 1;
+    display: flex;
+    
+    justify-content: center;
+    color: #000; /* 默认文字颜色 */
+    text-decoration: none;
+    position: static; 
+    padding: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.menu-item a:hover,
+.menu-item a:active {
+    justify-content: center;
+    align-items: center;
+    height: calc(100%);
+    color: #fff !important;
+    background-color: rgba(247, 228, 195, 0.29); /* 悬停/点击时文字变白 */
+}
+
+.menu-item a::before,
+.menu-item a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 31px; 
+    
+    background-image: url("index/花纹箭头.png");
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.3sz ease;
+    z-index: 1; /* 确保图标在背景层之上 */
+}
+
+.menu-item a::before {
+    left: 10px; 
+    transform: translateY(-50%);
+}
+
+.menu-item a::after {
+    right: 10px; /* 与文字间距 */
+    transform: translateY(-50%) rotate(180deg); /* 镜像反转箭头 */
+}
+
+.menu-item a:hover::before,
+.menu-item a:hover::after,
+.menu-item a:active::before,
+.menu-item a:active::after {
+    opacity: 1;
+}
+
+.nav-container {
+    display: -webkit-flex; /* Safari兼容 */
+    display: flex;
+}
+
+.menu {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-gap: 40px; /* 旧版Safari */
+    gap: 40px;
+}
+
+
+/* 页脚 */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #574E47;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+}
+
+/* 大屏设备适配 */
+@media (max-width: 1440px) {
+    .nav-container {
+        padding: 0 60px; /* 大屏设备适配 */
+    }
+}
+/*  移动端间距优化 */
+@media (max-width: 768px) {
+    .menu {
+        gap: 20px; /* 移动端间距优化 */
+    }
+    .title.vertical-text {
+        letter-spacing: 0.3em;
+    }
+    .vertical-connector {
+        height: 40px;
+    }
+}

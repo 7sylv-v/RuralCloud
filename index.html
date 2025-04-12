@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>门头沟传统村落</title>
+    <style>
+        :root {
+            --bg-image-1: url('index/screen1.png');
+            --bg-image-2: url('index/screen2.png');
+            --color-3: rgba(116, 140, 155, 0.82);  /* #748C9B 82%透明度 */
+            --color-1: rgba(116, 155, 137, 0.82);  /* #749B89 82%透明度 */
+            --color-4: rgba(123, 116, 155, 0.82);  /* #7B749B 82%透明度 */
+            --color-2: rgba(192, 153, 70, 0.82);  /* #C09946 82%透明度 */
+          }
+        /* 引入自定义字体 */
+        @font-face {
+            font-family: 'PingFangSC';
+            src: url('path/to/PingFangSC-Regdivar.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'FZLiuGongQuanKaiShuS';
+            src: url('fonts/方正柳公权楷书 简.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap; /* 避免文字闪烁 */
+          }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PangSC', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bg.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="header">
+        <div class="nav-container">
+            <img class="logo" src="index/logo.png" />
+            <div class="menu">
+                <div class="menu-item"><a href="index.html">首页</a></div>
+                <div class="menu-item"><a href="column1/clda.html">村落档案</a></div>
+                <div class="menu-item"><a href="#">文创市集</a></div>
+                <div class="menu-item"><a href="#">云游古村</a></div>
+                <div class="menu-item"><a href="#">保护监测</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 轮播图 -->
+    <section class="banner">
+        <div class="slides">
+            <div class="slide">
+                <img src="index/banner1.png"  data-src/>
+            </div>
+            <div class="slide">
+                <img src="index/banner2.png"  data-src"/>
+            </div>
+            <div class="slide">
+                <img src="index/banner3.png"  data-src/>
+            </div>
+        </div>
+         <!-- 添加定位符/指示器 -->
+    <div class="indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+        <span class="indicator" data-index="2"></span>
+    </section>
+
+    <!-- 第1屏内容 -->
+    <section class="first-screen bg-1">
+        <h1 class="title">乡韵云村</h1>
+        <img src="index/pics1.png" class="main-image">
+        <div class="content-wrapper">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="value-unit">
+                        <span class="number">12</span>
+                        <span class="unit">个</span>
+                    </div>
+                    <div class="name">国家级传统村落</div>
+                </div>
+                <div class="stat-item">
+                    <div class="value-unit">
+                        <span class="number">85</span>
+                        <span class="unit">项</span>
+                    </div>
+                    <div class="name">重点文物保护单位</div>
+                </div>
+                <div class="stat-item">
+                    <div class="value-unit">
+                        <span class="number">75</span>
+                        <span class="unit">项</span>
+                    </div>
+                    <div class="name">非物质文化遗产</div>
+                </div>
+                <!-- 其他两个统计项结构相同 -->
+            </div>
+            <div class="description">
+                <p>山高水长，历史悠久，多元文化在此交汇融合，传承演进，形成以名刹古寺，古村古道，民间民俗，红色历史，京西煤业，生态山水等的门头沟。</p>
+            </div>
+        </div>
+    </section>
+    <!-- 第2屏内容 -->
+    <section class="second-screen bg-2">
+        <div class="content-wrapper">
+            <div class="content-title">
+                <div class="title vertical-text">乡<br>韵<br>云<br>村</div>
+                <!-- 纵向连接符 -->
+                <img src="index/栏目插图/连接符.svg" class="vertical-connector" alt="装饰分隔线">
+                <!-- 更多详情带背景图 -->
+                <div class="more-details">
+                    <div class="text">更<br>多<br>详<br>情</div>
+                    <img src="index/栏目插图/detail-pattern.svg" class="bg-image">
+                </div>
+            </div>
+            <div class="content-columns">
+                <!-- 栏目1 -->
+                <a href="#" class="column-item">
+                    <div class="column-bg" style="background-color: var(--color-1);"></div>
+                    <img  class="column-bg-image" src="index/栏目插图/column1.png" alt="栏目1">
+                    <div class="column-title">
+                        <div class="column-icon"><img src="index/栏目插图/Folder-one (文件夹1).svg"></div>
+                        <div class="column--item-title">乡韵云村 · 村落档案</div>
+                        <div class="column--item-detail">
+                            <p>了解更多</p>
+                            <img src="index/栏目插图/arrow-right.svg"/>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 栏目2 -->
+                <a href="#" class="column-item">
+                    <div class="column-bg" style="background-color: var(--color-2);"></div>
+                    <img class="column-bg-image" src="index/栏目插图/column2.png" alt="栏目2">
+                    <div class="column-title">
+                        <div class="column-icon"><img src="index/栏目插图/Gift (礼物).svg"></div>
+                        <div class="column--item-title">乡韵云村 · 文创市集</div>
+                        <div class="column--item-detail">
+                            <p>了解更多</p>
+                            <img src="index/栏目插图/arrow-right.svg"/>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 栏目3 -->
+                <a href="#" class="column-item">
+                    <div class="column-bg" style="background-color: var(--color-3);"></div>
+                    <img class="column-bg-image"  src="index/栏目插图/column3.png" alt="栏目3">
+                    <div class="column-title">
+                        <div class="column-icon"><img src="index/栏目插图/Smart-optimization (智能优化).svg"></div>
+                        <div class="column--item-title">乡韵云村 · 云游古村</div>
+                        <div class="column--item-detail">
+                            <p>了解更多</p>
+                            <img src="index/栏目插图/arrow-right.svg"/>
+                        </div>
+                    </div>
+                </a>
+                <!-- 栏目4 -->
+                <a href="#" class="column-item">
+                    <div class="column-bg" style="background-color: var(--color-4);"></div>
+                    <img class="column-bg-image"  src="index/栏目插图/column4.png" alt="栏目4">
+                    <div class="column-title">
+                        <div class="column-icon"><img src="index/栏目插图/Signal-tower (信号塔).svg"></div>
+                        <div class="column--item-title">乡韵云村 · 保护监测</div>
+                        <div class="column--item-detail">
+                            <p>了解更多</p>
+                            <img src="index/栏目插图/arrow-right.svg"/>
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 第3屏内容 -->
+    <section class="third-screen bg-1">
+        <div class="content-wrapper">
+            <div class="content-title">
+                <div class="title vertical-text">村<br>落<br>档<br>案</div>
+                <!-- 纵向连接符 -->
+                <img src="index/栏目插图/连接符.svg" class="vertical-connector" alt="装饰分隔线">
+                <!-- 更多详情带背景图 -->
+                <div class="more-details">
+                    <div class="text">更<br>多<br>详<br>情</div>
+                    <img src="index/栏目插图/detail-pattern.svg" class="bg-image">
+                </div>
+            </div>
+            <div class="content-grids">
+                <!-- 栏目1 -->
+                <a href="column1/clda.html" class="grids-item">
+                    
+                    <img  class="grids-bg-image" src="index/村落档案插图/灵岳寺.png" alt="灵岳寺">
+                    <div class="grids-title" style="background-color: var(--color-1);">
+                        <div class="grids--item-title">
+                            <p>灵岳寺</p>
+                            <p>第七批全国重点文物保护单位</p>
+                        </div>
+                        <div class="grids--item-detail">
+                            <img src="index/Right-small (右-小).svg"/>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- 栏目2 -->
+                <a href="#" class="grids-item">
+                    <div class="grids-bg" style="background-color: var(--color-2);"></div>
+                    <img  class="grids-bg-image" src="index/村落档案插图/爨底下村古建筑群.png" alt="灵岳寺">
+                    <div class="grids-title" style="background-color: var(--color-2);">
+                        <div class="grids--item-title">
+                            <p>爨底下村古建筑群</p>
+                            <p>第六批全国重点文物保护单位</p>
+                        </div>
+                        <div class="grids--item-detail">
+                            <img src="index/Right-small (右-小).svg"/>
+                        </div>
+                    </div>
+                </a>
+                <!-- 栏目3 -->
+                <a href="#" class="grids-item">
+                    <div class="grids-bg" style="background-color: var(--color-3);"></div>
+                    <img  class="grids-bg-image" src="index/村落档案插图/戒台寺.png" alt="灵岳寺">
+                    <div class="grids-title" style="background-color: var(--color-3);">
+                        <div class="grids--item-title">
+                            <p>戒台寺</p>
+                            <p>全国重点文物保护单位</p>
+                        </div>
+                        <div class="grids--item-detail">
+                            <img src="index/Right-small (右-小).svg"/>
+                        </div>
+                    </div>
+                </a>
+                <!-- 栏目4 -->
+                <a href="#" class="grids-item">
+                    <div class="grids-bg" style="background-color: var(--color-4);"></div>
+                    <img  class="grids-bg-image" src="index/村落档案插图/潭沰寺.png" alt="灵岳寺">
+                    <div class="grids-title" style="background-color: var(--color-4);">
+                        <div class="grids--item-title">
+                            <p>潭柘寺</p>
+                            <p>全国重点文物保护单位</p>
+                        </div>
+                        <div class="grids--item-detail">
+                            <img src="index/Right-small (右-小).svg"/>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer class="footer">
+        门头沟乡韵云村@版权所有：北京邮电大学"智慧团队
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

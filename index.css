@@ -1,0 +1,495 @@
+.bg-1 { background-image: var(--bg-image-1); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;}
+.bg-2 { background-image: var(--bg-image-2); 
+    background-size: auto; /* 保持原图尺寸 */
+    background-repeat: repeat;}
+
+.banner {
+    position: relative;
+    margin-top: 0;
+    top: 0;
+    height: 500px;
+    overflow: hidden;  /* 微调补偿可能的计算误差 */
+}
+
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+  
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+.slide img {
+    width: 100%;
+    height: 100%; /* 修复缺失的高度定义 */
+    object-fit: cover;
+}
+
+/* 新增指示器样式 */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.indicator {
+    width: 50px;
+    height: 27px;
+    background-image: url('index/indicator-native.png');
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-image: url('index/indicator-active.png');
+}
+
+
+.first-screen {
+    position: relative;
+    height: fix-content; /* 根据需求调整 */
+    overflow: hidden;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+
+
+
+.title{
+    font-size: 48px;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+}
+
+.main-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;    
+}
+
+
+/* content-wrapper 布局 */
+.content-wrapper {
+    display: flex;
+    margin: 58px 120px; /* 左右边距 */
+    gap: 60px; /* 左右区块间距 */
+    align-items: flex-start; /* 顶部对齐 */
+  }
+  
+  /* 左侧统计区块 */
+  .stats {
+    margin: 58px;
+    display: flex;
+    gap: 76px; /* 统计项间距 */
+    flex: 1; /* 自动填充剩余空间 */
+  }
+  
+  /* 单个统计项样式 */
+  .stat-item {
+    min-width: 120px;
+    text-align: center;
+  }
+  
+  /* 右侧描述区块 */
+  .description {
+    flex: 1;
+    padding-top: 10px; /* 与统计项对齐 */
+    line-height: 1.8;
+  }
+
+  
+/* 数值单位组合样式 */
+.value-unit {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .number {
+    font-size: 64px;
+    font-weight: bold;
+    color: #D59F3E;
+    transition: color 0.3s;
+    padding-right: 15px; /* 给单位留空间 */
+  }
+  .unit {
+    position: absolute;
+    top:5px;
+    right: -5px;     /* 水平定位 */
+    font-size: 18px;
+    color: #D59F3E;
+    transform: translateY(-50%);
+  }
+  
+.name{
+    font-size: 20px;
+    color: #000000;
+}
+
+.description{
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: 0.12em; 
+    text-align: left;
+}
+
+
+/* 第二屏基础样式 */
+.second-screen.bg-2 {
+    padding: 68px 0;
+}
+
+.content-wrapper {
+    width: calc(100% - 240px);
+    max-width: 1440px;
+    height: fit-content;
+    margin: 68px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* 纵向标题组件 */
+.content-title .title {
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+    font-size: 48px;
+    color: #333;
+    
+}
+.content-title {
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-left: 60px;
+}
+
+/* 连接符样式 */
+.vertical-connector {
+    height: auto;
+    width: auto;
+    opacity: 1;
+}
+
+/* 更多详情带背景 */
+.more-details {
+    position: relative;
+    width: fit-content;
+    padding: 8px 15px;
+    
+}
+
+.more-details .text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+}
+
+.more-details .bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    object-fit: contain;
+    opacity: 1;
+    z-index: 1;
+}
+
+.more-details:hover {
+    .bg-image{opacity: 0.8;}
+    .text{color: rgb(255, 241, 187);}
+    transform: scale(1.05);
+}
+
+/* 栏目区域 */
+.content-columns {
+    display:flex;
+    gap: 30px;
+}
+
+.column-item {
+    position: relative;
+    display: block;
+    width: 228px;
+    height: 425px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+}
+/* 奇数项向上偏移 */
+.column-item:nth-child(odd) {
+    transform: translateY(-70px);
+}
+
+/* 偶数项向下偏移 */ 
+.column-item:nth-child(even) {
+    transform: translateY(70px);
+}
+
+.column-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.column-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.7;
+    mix-blend-mode:normal;
+}
+.column-bg-image {
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform-origin: center center; /* 设置放大中心点 */
+}
+.column-title {
+    position: absolute;
+    top:16px;
+    left: 16px;
+    gap:10px;
+    color: white;
+    z-index: 2;
+}
+
+.column-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.column--item-title{
+    font-size: 20px;
+}
+.column--item-detail{
+    display: flex;          /* 启用弹性布局 */
+    flex-direction: row;    /* 横向排列（默认值可省略） */
+    gap: 8px;              /* 项目间距 */
+    align-items: flex-end;  /* 垂直方向底部对齐 */
+    justify-content: flex-start;
+}
+.column--item-detail p{
+    font-size: 16px;
+}
+
+.column--item-detail img{
+    padding-bottom: 4px;
+    width: fit-content;
+    height: 16px;
+}
+
+/* 悬停效果 */
+.column-item:hover .column-bg {
+    opacity: 0.5;
+}
+
+.column-item:hover .column-bg-image{
+    opacity: 0.9;
+    transform: scale(1.05);  /* 图片放大10% */
+    transition: transform 0.3s ease, opacity 0.3s; /* 添加平滑过渡 */
+}
+.column-item:hover .column--item-detail img{
+    transform: translateX(3px);
+}
+
+/* 第三屏基础样式 */
+.third-screen.bg-1 {
+    
+    padding: 68px 0;
+}
+
+.content-wrapper {
+    width: calc(100% - 240px);
+    max-width: 1440px;
+    height: fit-content;
+    margin: 68px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* 纵向标题组件 */
+.content-title .title {
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+    font-size: 48px;
+    color: #333;
+    
+}
+.content-title {
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-left: 60px;
+}
+
+/* 连接符样式 */
+.vertical-connector {
+    height: auto;
+    width: auto;
+    opacity: 1;
+}
+
+/* 更多详情带背景 */
+.more-details {
+    position: relative;
+    width: fit-content;
+    padding: 8px 15px;
+    
+}
+
+.more-details .text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+}
+
+.more-details .bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    object-fit: contain;
+    opacity: 1;
+    z-index: 1;
+}
+
+.more-details:hover {
+    .bg-image{opacity: 0.8;}
+    .text{color: rgb(255, 241, 187);}
+    transform: scale(1.05);
+}
+
+/* 网格容器 */
+.content-grids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 固定2列 */
+    grid-template-rows: repeat(2, 1fr);    /* 固定2行 */
+    gap: 15px 30px;
+    padding: 20px;
+}
+
+/* 网格项基础样式 */
+.grids-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 2px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+/* 背景层控制 */
+.grids-bg-image {
+    display: block;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+/* 标题容器 */
+.grids-title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    gap: 5px;
+    width: fit-content;
+}
+
+/* 标题文字纵向左对齐 */
+.grids--item-title p{
+    text-orientation: upright;
+    text-align: left;
+    margin: 10px 0;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    z-index: 3;
+}
+
+/* 详情区域横向居中 */
+.grids--item-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    z-index: 3;
+    opacity: 1;
+}
+
+/* 悬停效果 */
+.grids-item:hover .grids-bg-image{
+    
+    opacity: 0.9;
+    transform: scale(1.02);  /* 图片放大10% */
+    transition: transform 0.3s ease-in-out, opacity 0.3s; /* 添加平滑过渡 */
+    
+}
+
+.grids-item:hover .grids--item-detail img{
+    transform: translateX(3px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+
+/* 页脚 */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #574E47;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'FZLiuGongQuanKaiShuS', sans-serif;
+}
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .grids-item {
+        height: 300px;
+    }
+    .grids--item-title {
+        font-size: 18px;
+    }
+}
+
